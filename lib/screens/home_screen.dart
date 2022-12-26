@@ -3,7 +3,7 @@
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_book_flight_ticket/screens/hotel_view.dart';
-import 'package:flutter_book_flight_ticket/screens/ticket_view.dart';
+import 'package:flutter_book_flight_ticket/screens/book_ticket_view.dart';
 import 'package:flutter_book_flight_ticket/utils/app_info_layout.dart';
 import 'package:flutter_book_flight_ticket/utils/app_layout.dart';
 import 'package:flutter_book_flight_ticket/utils/styles.dart';
@@ -92,10 +92,13 @@ class HomeScreen extends StatelessWidget {
             padding: EdgeInsets.only(left: AppLayout.getWidth(20)),
             child: Row(
               children: ticketList
-                  .map((ticket) => TicketView(ticket: ticket))
+                  .map((ticket) => TicketView(
+                        ticket: ticket,
+                      ))
                   .toList(),
             ),
           ),
+          Gap(AppLayout.getHeight(20)),
           Container(
             padding: EdgeInsets.symmetric(horizontal: AppLayout.getWidth(24)),
             child: DoubleText(

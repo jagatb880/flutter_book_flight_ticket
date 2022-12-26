@@ -5,6 +5,7 @@ import 'package:flutter_book_flight_ticket/utils/app_layout.dart';
 import 'package:flutter_book_flight_ticket/utils/styles.dart';
 import 'package:flutter_book_flight_ticket/widgets/double_text_widget.dart';
 import 'package:flutter_book_flight_ticket/widgets/icon_text_widget.dart';
+import 'package:flutter_book_flight_ticket/widgets/ticket_tab.dart';
 import 'package:gap/gap.dart';
 
 class SearchScreen extends StatelessWidget {
@@ -31,40 +32,9 @@ class SearchScreen extends StatelessWidget {
           Gap(
             AppLayout.getHeight(20),
           ),
-          FittedBox(
-            child: Container(
-              padding: EdgeInsets.all(3.5),
-              child: Row(
-                children: [
-                  Container(
-                    child: Center(child: Text("Airline Tickets")),
-                    width: size.width * .44,
-                    padding:
-                        EdgeInsets.symmetric(vertical: AppLayout.getHeight(7)),
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.horizontal(
-                            left: Radius.circular(AppLayout.getWidth(50))),
-                        color: Colors.white),
-                  ),
-                  Container(
-                    child: Center(child: Text("Hotels")),
-                    width: size.width * .44,
-                    padding:
-                        EdgeInsets.symmetric(vertical: AppLayout.getHeight(7)),
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.horizontal(
-                            right: Radius.circular(AppLayout.getWidth(50))),
-                        color: Colors.transparent),
-                  )
-                ],
-              ),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(
-                  AppLayout.getWidth(50),
-                ),
-                color: Color(0xFFF4F6FD),
-              ),
-            ),
+          TicketTab(
+            leftTab: 'Airline Tickets',
+            rightTab: 'Hotels',
           ),
           Gap(AppLayout.getHeight(25)),
           AppIconText(icon: Icons.flight_takeoff_rounded, text: "Departure"),

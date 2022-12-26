@@ -3,7 +3,11 @@
 import 'package:flutter/material.dart';
 
 class DottedLines extends StatelessWidget {
-  const DottedLines({super.key});
+  final bool? isColor;
+  const DottedLines({
+    Key? key,
+    required this.isColor,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +25,9 @@ class DottedLines extends StatelessWidget {
                 width: 3,
                 height: 1,
                 child: DecoratedBox(
-                  decoration: BoxDecoration(color: Colors.white),
+                  decoration: BoxDecoration(
+                      color:
+                          isColor == null ? Colors.white : Color(0xFF8ACCF7)),
                 ),
               ),
             ),
