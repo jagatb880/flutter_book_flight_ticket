@@ -3,6 +3,7 @@
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_book_flight_ticket/screens/home_screen.dart';
+import 'package:flutter_book_flight_ticket/screens/profile_screen.dart';
 import 'package:flutter_book_flight_ticket/screens/search_screen.dart';
 import 'package:flutter_book_flight_ticket/screens/book_ticket_view.dart';
 import 'package:flutter_book_flight_ticket/screens/ticket_screen.dart';
@@ -15,12 +16,12 @@ class BottomBar extends StatefulWidget {
 }
 
 class _BottomBarState extends State<BottomBar> {
-  int _selectedIndex = 1;
+  int _selectedIndex = 3;
   static final List<Widget> _widgetoptions = <Widget>[
     const HomeScreen(),
     const SearchScreen(),
     const TicketScreen(),
-    const Text("Profile"),
+    const ProfileScreen(),
   ];
 
   void _onItemTapped(int index) {
