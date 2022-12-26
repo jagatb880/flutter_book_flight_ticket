@@ -39,6 +39,7 @@ dependencies:
   fluentui_icons: ^1.0.0
   gap: ^2.0.1
   get: ^4.6.5
+  barcode_widget: ^2.0.3
 
 dev_dependencies:
   flutter_test:
@@ -69,6 +70,7 @@ flutter:
     - assets/images/two.png
     - assets/images/three.png
     - assets/images/sit.jpg
+    - assets/images/visa.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

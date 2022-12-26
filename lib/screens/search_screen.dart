@@ -14,180 +14,183 @@ class SearchScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final size = AppLayout.getSize(context);
-    return Scaffold(
-      backgroundColor: Styles.bgColor,
-      body: ListView(
-        padding: EdgeInsets.symmetric(
-            horizontal: AppLayout.getWidth(20),
-            vertical: AppLayout.getHeight(20)),
-        children: [
-          Gap(
-            AppLayout.getHeight(30),
-          ),
-          Text(
-            "What you \nare looking for",
-            style: Styles.headLineStyle1
-                .copyWith(fontSize: AppLayout.getWidth(35)),
-          ),
-          Gap(
-            AppLayout.getHeight(20),
-          ),
-          TicketTab(
-            leftTab: 'Airline Tickets',
-            rightTab: 'Hotels',
-          ),
-          Gap(AppLayout.getHeight(25)),
-          AppIconText(icon: Icons.flight_takeoff_rounded, text: "Departure"),
-          Gap(AppLayout.getHeight(15)),
-          AppIconText(icon: Icons.flight_land_rounded, text: "Arrival"),
-          Gap(AppLayout.getHeight(25)),
-          Container(
-            padding: EdgeInsets.symmetric(
-                vertical: AppLayout.getHeight(15),
-                horizontal: AppLayout.getHeight(10)),
-            decoration: BoxDecoration(
-                color: Color(0xD91130CE),
-                borderRadius: BorderRadius.circular(AppLayout.getHeight(10))),
-            child: Center(
-              child: Text(
-                "Find Tickets",
-                style: Styles.textStyle.copyWith(color: Colors.white),
-              ),
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: Styles.bgColor,
+        body: ListView(
+          padding: EdgeInsets.symmetric(
+              horizontal: AppLayout.getWidth(20),
+              vertical: AppLayout.getHeight(20)),
+          children: [
+            Gap(
+              AppLayout.getHeight(10),
             ),
-          ),
-          Gap(AppLayout.getHeight(30)),
-          DoubleText(
-            leftText: "Upcoming Flight",
-            rightText: "View all",
-          ),
-          Gap(AppLayout.getHeight(20)),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Container(
-                width: size.width * 0.40,
-                height: AppLayout.getHeight(350),
-                padding: EdgeInsets.symmetric(
-                    horizontal: AppLayout.getWidth(15),
-                    vertical: AppLayout.getHeight(15)),
-                margin: EdgeInsets.only(right: AppLayout.getWidth(17)),
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius:
-                        BorderRadius.circular(AppLayout.getHeight(24)),
-                    boxShadow: [
-                      BoxShadow(
-                          color: Colors.grey.shade200,
-                          blurRadius: 20,
-                          spreadRadius: 5)
-                    ]),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Container(
-                      height: AppLayout.getHeight(150),
-                      decoration: BoxDecoration(
-                          borderRadius:
-                              BorderRadius.circular(AppLayout.getHeight(12)),
-                          color: Styles.primaryColor,
-                          image: DecorationImage(
-                              fit: BoxFit.cover,
-                              image: AssetImage("assets/images/sit.jpg"))),
-                    ),
-                    Gap(AppLayout.getHeight(10)),
-                    Text(
-                      "20% discount \non business \nclass \ntickets from \nAirline on \nInternational",
-                      style: Styles.headLineStyle2,
-                    )
-                  ],
+            Text(
+              "What you \nare looking for",
+              style: Styles.headLineStyle1
+                  .copyWith(fontSize: AppLayout.getWidth(35)),
+            ),
+            Gap(
+              AppLayout.getHeight(20),
+            ),
+            TicketTab(
+              leftTab: 'Airline Tickets',
+              rightTab: 'Hotels',
+            ),
+            Gap(AppLayout.getHeight(25)),
+            AppIconText(icon: Icons.flight_takeoff_rounded, text: "Departure"),
+            Gap(AppLayout.getHeight(15)),
+            AppIconText(icon: Icons.flight_land_rounded, text: "Arrival"),
+            Gap(AppLayout.getHeight(25)),
+            Container(
+              padding: EdgeInsets.symmetric(
+                  vertical: AppLayout.getHeight(15),
+                  horizontal: AppLayout.getHeight(10)),
+              decoration: BoxDecoration(
+                  color: Color(0xD91130CE),
+                  borderRadius: BorderRadius.circular(AppLayout.getHeight(10))),
+              child: Center(
+                child: Text(
+                  "Find Tickets",
+                  style: Styles.textStyle.copyWith(color: Colors.white),
                 ),
               ),
-              Column(
-                children: [
-                  Stack(
+            ),
+            Gap(AppLayout.getHeight(30)),
+            DoubleText(
+              leftText: "Upcoming Flight",
+              rightText: "View all",
+            ),
+            Gap(AppLayout.getHeight(20)),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Container(
+                  width: size.width * 0.40,
+                  height: AppLayout.getHeight(350),
+                  padding: EdgeInsets.symmetric(
+                      horizontal: AppLayout.getWidth(15),
+                      vertical: AppLayout.getHeight(15)),
+                  margin: EdgeInsets.only(right: AppLayout.getWidth(17)),
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius:
+                          BorderRadius.circular(AppLayout.getHeight(24)),
+                      boxShadow: [
+                        BoxShadow(
+                            color: Colors.grey.shade200,
+                            blurRadius: 20,
+                            spreadRadius: 5)
+                      ]),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Container(
-                        width: size.width * .44,
-                        height: AppLayout.getHeight(174),
+                        height: AppLayout.getHeight(150),
                         decoration: BoxDecoration(
-                          color: Color(0xFF3AB8B8),
-                          borderRadius: BorderRadius.circular(
-                            AppLayout.getHeight(18),
-                          ),
-                        ),
-                        padding: EdgeInsets.all(AppLayout.getHeight(15)),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              "Discount \nfor survey",
-                              style: Styles.headLineStyle2.copyWith(
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.white),
-                            ),
-                            Gap(AppLayout.getHeight(10)),
-                            Text(
-                              "Take the survey \nabout our \nservices and \nget discount",
-                              style: Styles.headLineStyle2.copyWith(
-                                  fontWeight: FontWeight.w500,
-                                  color: Colors.white,
-                                  fontSize: 16),
-                            ),
-                          ],
-                        ),
+                            borderRadius:
+                                BorderRadius.circular(AppLayout.getHeight(12)),
+                            color: Styles.primaryColor,
+                            image: DecorationImage(
+                                fit: BoxFit.cover,
+                                image: AssetImage("assets/images/sit.jpg"))),
                       ),
-                      Positioned(
-                        right: -35,
-                        top: -35,
-                        child: Container(
-                          padding: EdgeInsets.all(AppLayout.getHeight(30)),
-                          decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              border: Border.all(
-                                  width: 18, color: Color(0xFF189999)),
-                              color: Colors.transparent),
-                        ),
-                      ),
+                      Gap(AppLayout.getHeight(10)),
+                      Text(
+                        "20% discount \non business \nclass \ntickets from \nAirline on \nInternational",
+                        style: Styles.headLineStyle2,
+                      )
                     ],
                   ),
-                  Gap(AppLayout.getHeight(10)),
-                  Container(
-                    width: size.width * .44,
-                    height: AppLayout.getHeight(164),
-                    decoration: BoxDecoration(
-                      color: Color(0xFFEC6545),
-                      borderRadius: BorderRadius.circular(
-                        AppLayout.getHeight(18),
-                      ),
-                    ),
-                    padding: EdgeInsets.all(AppLayout.getHeight(15)),
-                    child: Column(
+                ),
+                Column(
+                  children: [
+                    Stack(
                       children: [
-                        Text(
-                          "Take love",
-                          style: Styles.headLineStyle2.copyWith(
-                              color: Colors.white, fontWeight: FontWeight.bold),
-                          textAlign: TextAlign.center,
+                        Container(
+                          width: size.width * .44,
+                          height: AppLayout.getHeight(174),
+                          decoration: BoxDecoration(
+                            color: Color(0xFF3AB8B8),
+                            borderRadius: BorderRadius.circular(
+                              AppLayout.getHeight(18),
+                            ),
+                          ),
+                          padding: EdgeInsets.all(AppLayout.getHeight(15)),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "Discount \nfor survey",
+                                style: Styles.headLineStyle2.copyWith(
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.white),
+                              ),
+                              Gap(AppLayout.getHeight(10)),
+                              Text(
+                                "Take the survey \nabout our \nservices and \nget discount",
+                                style: Styles.headLineStyle2.copyWith(
+                                    fontWeight: FontWeight.w500,
+                                    color: Colors.white,
+                                    fontSize: 16),
+                              ),
+                            ],
+                          ),
                         ),
-                        Gap(AppLayout.getHeight(5)),
-                        RichText(
-                          text: TextSpan(children: [
-                            TextSpan(
-                                text: '😍', style: TextStyle(fontSize: 28)),
-                            TextSpan(
-                                text: '🥰', style: TextStyle(fontSize: 40)),
-                            TextSpan(
-                                text: '😘', style: TextStyle(fontSize: 28)),
-                          ]),
+                        Positioned(
+                          right: -35,
+                          top: -35,
+                          child: Container(
+                            padding: EdgeInsets.all(AppLayout.getHeight(30)),
+                            decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                border: Border.all(
+                                    width: 18, color: Color(0xFF189999)),
+                                color: Colors.transparent),
+                          ),
                         ),
                       ],
                     ),
-                  )
-                ],
-              )
-            ],
-          )
-        ],
+                    Gap(AppLayout.getHeight(10)),
+                    Container(
+                      width: size.width * .44,
+                      height: AppLayout.getHeight(164),
+                      decoration: BoxDecoration(
+                        color: Color(0xFFEC6545),
+                        borderRadius: BorderRadius.circular(
+                          AppLayout.getHeight(18),
+                        ),
+                      ),
+                      padding: EdgeInsets.all(AppLayout.getHeight(15)),
+                      child: Column(
+                        children: [
+                          Text(
+                            "Take love",
+                            style: Styles.headLineStyle2.copyWith(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold),
+                            textAlign: TextAlign.center,
+                          ),
+                          Gap(AppLayout.getHeight(5)),
+                          RichText(
+                            text: TextSpan(children: [
+                              TextSpan(
+                                  text: '😍', style: TextStyle(fontSize: 28)),
+                              TextSpan(
+                                  text: '🥰', style: TextStyle(fontSize: 40)),
+                              TextSpan(
+                                  text: '😘', style: TextStyle(fontSize: 28)),
+                            ]),
+                          ),
+                        ],
+                      ),
+                    )
+                  ],
+                )
+              ],
+            )
+          ],
+        ),
       ),
     );
   }
